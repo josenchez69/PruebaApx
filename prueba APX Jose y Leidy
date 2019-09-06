@@ -1,0 +1,80 @@
+Leidy Natalia Gonzalez
+Jose Miguel Sanchez
+
+//Fake Binary
+
+public class FakeBinary {
+    public static String fakeBin(String numero) {
+        return numero.replaceAll("[0-4]","0").replaceAll("[5-9]","1");
+    }
+}
+
+//Even or Odd
+public class EvenOrOdd {
+    public static String even_or_odd(int number) {
+        //Place code here
+        String a;
+        if ((number%2)==0)
+            a = "Even";
+         else
+            a = "Odd";
+        return a;    
+    }
+}
+
+//Printer Errors
+public class Printer {
+    
+    public static String printerError(String s) {
+        // your code
+        int errores = 0;
+        int buenos = 0;
+        String d;
+        final char c[] = s.toCharArray();
+        for (int i = 0; i < c.length; i++)
+        {
+            if (c[i] <= 'm' && c[i] >= 'a')
+                buenos = buenos + 1; 
+            else
+               errores = errores + 1; 
+        }
+           d = (errores+"/"+c.length); 
+        return d;
+    }
+}
+
+//Maximum Product
+public class MaxProduct {
+  public int adjacentElementsProduct(int[] array) {
+    int a, maximo;
+    maximo = array[0]*array[1];
+    for (int i=0;i<array.length-1; i++){
+         a = array[i]*array[i+1]; 
+         if (a>maximo)
+               maximo = a;
+    }    
+    return maximo;       
+    // your code here
+  }
+}
+
+//
+class Persist {
+	public static int persistence(long n) {
+		// your code
+    int contador = 0; 
+    long resultado;
+    while(n > 9)
+    {
+       resultado = 1;
+       for(char t : String.valueOf(n).toCharArray())
+       {
+         resultado *= Long.parseLong(String.valueOf(t));
+       }
+       n = resultado;
+       contador++;
+    }
+    return contador;   
+	}
+}
+
